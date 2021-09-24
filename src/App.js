@@ -16,7 +16,7 @@ function App() {
   const [topNews,setTopNews] = useState();
   const [news,setNews] = useState()
 
-  const apiKey = "19bd167d1e5b43b6a9cfe53b3746830a"
+  const apiKey = process.env.REACT_APP_NEWS_ORG_API_KEY
   useEffect(()=>{
     fetch(`https://newsapi.org/v2/top-headlines?country=in&apiKey=${apiKey}`)
     .then(response=>response.json())
