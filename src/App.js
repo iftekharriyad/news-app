@@ -24,16 +24,18 @@ function App() {
       setTopNews(data.articles)
       setTopNewsArrived(true);
     })
-  },[])
+  },[apiKey])
 
   function handleSearch(searchText){
     setSearchCliked(true)
+    setNewsArrived(false)
     fetch(`https://newsapi.org/v2/everything?q=${searchText}&apiKey=${apiKey}`)
     .then(response=>response.json())
     .then(data=>{
       setNews(data.articles)
       setNewsArrived(true);
     })
+    
   }
   return (
     <>
